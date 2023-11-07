@@ -1,0 +1,10 @@
+{
+  "host": "localhost",
+  "user": "db",
+  "password": "admin123",
+  "port": 3306,
+  "database": "db",
+  "waitForConnections": true,
+  "connectionLimit": 10,
+  "queueLimit": 0
+}
