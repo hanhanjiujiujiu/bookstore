@@ -12,7 +12,7 @@ const LoginController = {
       res.status(500).send('Internal Server Error');
     }
   },
-  // 用户登录
+  // 用户注册
   register: async (req, res) => {
     try {
       const { username, password } = req.body.values;

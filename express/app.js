@@ -8,6 +8,7 @@ var logger = require('morgan');
 var Token = require('./utils/Token');
 var corsMiddleware = require('./utils/cors');
 
+var loginAdminRouter = require('./routes/admin/loginAdmin');
 var loginRouter = require('./routes/user/loginuser');
 var listRouter = require('./routes/user/list');
 
@@ -37,8 +38,10 @@ app.use(corsMiddleware);
 app.use(Token.checkToken);
 
 // 使用路由中间件
+app.use('/admin', loginAdminRouter);
 app.use('/', loginRouter);
 app.use('/', listRouter);
+
 
 // 捕获 404 并转发到错误处理程序
 app.use(function (req, res, next) {
